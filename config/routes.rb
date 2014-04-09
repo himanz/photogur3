@@ -1,8 +1,6 @@
 Photogur3::Application.routes.draw do
   root :to => 'pictures#index'
-  get 'pictures/0' => 'pictures#picture0'
-  get 'pictures/1' => 'pictures#picture1'
-  get 'pictures/2' => 'pictures#picture2'
+  get 'pictures/:id' => 'pictures#show', as: "picture"
 
   resources :pictures
 
