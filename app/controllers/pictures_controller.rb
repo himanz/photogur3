@@ -1,6 +1,6 @@
 class PicturesController < ApplicationController
 	def index
-		@pictures = [
+		@hellos = [
 			{
 				:title => "The old church on the coast of White sea",
 				:artist => "Sergey Ershov",
@@ -20,7 +20,7 @@ class PicturesController < ApplicationController
 	end
 
 	def show
-		@pictures = [
+		@hellos = [
 			{
 			:title => "The old church on the coast of White sea",
 			:artist => "Sergey Ershov",
@@ -37,6 +37,13 @@ class PicturesController < ApplicationController
 			:url => "http://monicao.s3.amazonaws.com/bitmaker/girl.jpg"
 		}
 	  ]
-	  @picture = @pictures[params[:id].to_i]
+	  @hello = @hellos[params[:id].to_i]
+	end
+
+	def new
+	end
+
+	def create
+		render :text => "Saving a picture. URL: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
 	end
 end
